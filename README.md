@@ -1,4 +1,7 @@
-# MExTA
+# **MExTA**
+
+A Minimal Expenses Tracking Application built with Ruby on Rails! \
+It is a SPA thanks to Hotwire / Turbo that comes with Rails 7. Also, Bootstrap and a bit of Stimulus were used for frontend part.
 
 --------
 
@@ -17,9 +20,6 @@ software installed:
 --------
 
 ### Installation:
-
-**All the instructions are written for Linux(Ubuntu) system,
-on other systems some of them could be irrelevant!**
 
 #### Step 1
 
@@ -65,17 +65,19 @@ when applying changes to the database, do this:
 
 1. Open the postgres config file with your text editor (nano, vim etc...)
 
+If you're on Debian / Ubuntu:
 ```shell
 $ sudo <text_editor> /etc/postgresql/<version>/main/pg_hba.conf
 ```
 
-2. Find the line with content like `local all postgres peer`
-
-3. Comment it out and paste this line below:
-
+If you're on Fedora:
+```shell
+$ sudo <text_editor> /var/lib/pgsql/data/pg_hba.conf
 ```
-local all all md5
-```
+
+2. Find the line with content like: `local all postgres peer`
+
+3. Comment it out and paste this line below: `local all all md5`
 
 4. Restart your Postgres server:
 
@@ -102,7 +104,7 @@ $ corepack enable
 
 #### Step 5
 
-Install [bundler](https://bundler.io/), if you don't have it yet:
+Install [bundler](https://bundler.io/):
 
 ```shell
 $ gem install bundler
@@ -124,15 +126,14 @@ $ cp database.yml.sample database.yml
 
 #### Step 7
 
-Create, migrate and seed the database:
+Create and migrate the database:
 
 ```shell
 $ rake db:create
 $ rake db:migrate
-$ rake db:seed
 ```
 
-**Congratulations, you have set the project up successfully!**
+**Congratulations, you have set up the project!**
 
 --------
 
@@ -141,7 +142,7 @@ $ rake db:seed
 #### Server
 
 ```shell
-$ rails s # start up
+$ bin/dev # start up
 [ctrl + c] # shut down
 ```
 
@@ -152,7 +153,7 @@ When up, the project is available on
 
 ```shell
 $ rails c # start up
-> exit # and hit Enter in the console itself to shut down
+> exit # shut down
 ```
 
 #### Tests
