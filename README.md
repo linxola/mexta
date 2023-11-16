@@ -3,6 +3,23 @@
 A Minimal Expenses Tracking Application built with Ruby on Rails! \
 It is a SPA thanks to Hotwire / Turbo that comes with Rails 7. Also, Bootstrap and a bit of Stimulus were used for frontend part.
 
+## Screenshots
+
+| [![Welcome screen](https://i.postimg.cc/2yK6BQL5/Screenshot-from-2023-11-15-11-40-31.png)](https://postimg.cc/Zv6ZGyck) |
+| --- |
+| [![Main screen](https://i.postimg.cc/C5H33SSp/Screenshot-from-2023-11-15-11-55-15.png)](https://postimg.cc/4Hy2tCYW) |
+| [![Categories screen](https://i.postimg.cc/G2zPV5VS/Screenshot-from-2023-11-15-11-58-03.png)](https://postimg.cc/Ppp882tm) |
+
+## Features
+
+- Signing up and signing in with the login and password.
+- Spendings can be created, updated and deleted and has such fields: title, description, category and amount.
+- When creating a spending, a category is chosen from the list of predefined by default or created by user categories.
+- Categories has their own management screen, where they can be created, updated and deleted.
+- Main screen is the list of user's spendings with a total value and search filters with the support of several parameters (e.g., category, amount).
+- User is able to share (with a button on the main screen) the non-editable list of his spendings with another user (even if the other user isn't logged in).
+- The share link is unique and generated each time user presses the share button.
+
 --------
 
 ## Getting Started
@@ -27,7 +44,7 @@ Clone the project from this repository to your projects folder:
 
 ```shell
 $ cd <your_projects_root_folder>
-$ git clone git@github.com:mklins/mexta.git
+$ git clone <link_to_mexta_repo>
 $ cd mexta
 ```
 
@@ -36,20 +53,20 @@ $ cd mexta
 Install one of the tools for ruby version management (if you don't have it yet) -
 [RVM](https://rvm.io/rvm/install) or [rbenv](https://github.com/rbenv/rbenv#installation)
 
-Install Ruby 3.2.1 version:
+Install Ruby 3.2.2 version:
 
 with RVM:
 
 ```shell
-$ rvm install 3.2.1
-$ rvm use 3.2.1
+$ rvm install 3.2.2
+$ rvm use 3.2.2
 ```
 
 or with rbenv:
 
 ```shell
-$ rbenv install 3.2.1
-$ rbenv local 3.2.1
+$ rbenv install 3.2.2
+$ rbenv local 3.2.2
 ```
 
 #### Step 3
@@ -96,13 +113,27 @@ With NVM, install Node.js 18.14 (LTS) version:
 $ nvm install 18.14
 ```
 
-After Node.js install, enable yarn:
+#### Step 5
+
+After Node.js install, enable yarn through enabling Corepack:
 
 ```shell
 $ corepack enable
 ```
 
-#### Step 5
+or through installing it with npm:
+
+```shell
+$ npm install --global yarn
+```
+
+Install necessary yarn dependencies:
+
+```shell
+$ yarn install
+```
+
+#### Step 6
 
 Install [bundler](https://bundler.io/):
 
@@ -116,7 +147,7 @@ Run bundler to install the project's dependencies:
 $ bundle
 ```
 
-#### Step 6
+#### Step 7
 
 Create the database configuration file from sample and modify it according to your environment:
 
@@ -124,7 +155,7 @@ Create the database configuration file from sample and modify it according to yo
 $ cp database.yml.sample database.yml
 ```
 
-#### Step 7
+#### Step 8
 
 Create and migrate the database:
 
