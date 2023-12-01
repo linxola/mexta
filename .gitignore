@@ -1,11 +1,8 @@
-# Code editor related folders/files
+# Ignore code editor related folders/files
 .vscode/
 
-# asdf ruby version file
-.tool-versions
-
-# direnv file with ENV variables
-.envrc
+# Ignore file with environment variables
+.env
 
 # Ignore Node modules
 node_modules/
@@ -38,6 +35,3 @@ public/assets
 
 # Ignore master key for decrypting credentials and more.
 config/master.key
-
-# Ignore database configuration file
-config/database.yml

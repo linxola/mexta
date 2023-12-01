@@ -2,8 +2,6 @@ default: &default
   adapter: postgresql
   encoding: unicode
   timeout: 5000
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
@@ -42,6 +40,6 @@ test:
 #
 production:
   <<: *default
-  database: mexta_production
-  username: <%= ENV.fetch('DB_USERNAME') %>
-  password: <%= ENV.fetch('DB_PASSWORD') %>
+  database: mexta
+  username: <%= ENV.fetch('DB_PRODUCTION_USERNAME') %>
+  password: <%= ENV.fetch('DB_PRODUCTION_PASSWORD') %>

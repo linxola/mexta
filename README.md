@@ -149,10 +149,13 @@ $ bundle
 
 #### Step 7
 
-Create the database configuration file from sample and modify it according to your environment:
+Create .env file in the app's root and add there such environment variables with your values:
 
 ```shell
-$ cp database.yml.sample database.yml
+export DB_USERNAME=<value>
+export DB_PASSWORD=<value>
+export DB_PRODUCTION_USERNAME=<value>
+export DB_PRODUCTION_PASSWORD=<value>
 ```
 
 #### Step 8
